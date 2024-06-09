@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_migrate import Migrate
+import os
 
 from flask_login import (
     UserMixin,
@@ -24,14 +25,14 @@ bcrypt = Bcrypt()
 
 def create_app():
     app = Flask(__name__)
-
+    db_connection_string = os.environ['DB_CONNECTION_STRING']
     app.secret_key = 'secret-key'
-    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_connection_string
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
     login_manager.init_app(app)
     db.init_app(app)
     migrate.init_app(app, db)
     bcrypt.init_app(app)
-    
+
     return app
