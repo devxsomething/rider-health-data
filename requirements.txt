@@ -23,3 +23,14 @@ six==1.16.0
 SQLAlchemy==1.4.23
 Werkzeug==2.0.1
 WTForms==2.3.3
+pymysql
+email-validator
+Flask
+Flask-Bcrypt
+Flask-Login
+Flask-Migrate
+Flask-SQLAlchemy
+Flask-WTF
+SQLAlchemy
+Werkzeug
+WTForms

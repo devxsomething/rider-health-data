@@ -1,6 +1,6 @@
 language = "python3"
 run = "python routes.py"
-modules = ["web", "python-3.8"]
+modules = ["python-3.12", "web", "nix"]
 
 [deployment]
 run = ["sh", "-c", "python routes.py"]
